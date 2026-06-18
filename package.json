@@ -2,7 +2,7 @@
   "name": "shell-yeah",
   "displayName": "Shell Yeah!",
   "description": "Open a terminal (PowerShell, WSL, or Command Prompt) from the Explorer context menu, using the selected folder as the working directory.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "olaekdahl",
   "author": {
     "name": "Ola Ekdahl"
