@@ -1,22 +1,22 @@
-# Open Terminal Here
+# Shell Yeah!
 
 Open a terminal directly from the Explorer context menu in VS Code, using the folder you clicked as the working directory. The extension detects the shells installed on your machine — across Windows, macOS, and Linux — and only offers the ones that are actually available.
 
 ## Features
 
-- Adds an **Open Terminal Here** submenu to the Explorer context menu.
+- Adds a **Shell Yeah!** submenu to the Explorer context menu.
 - Detects the shells installed on the current machine and only shows those that are available:
 	- **Windows:** PowerShell, PowerShell 7 (`pwsh`), Command Prompt, Git Bash, WSL
 	- **macOS / Linux:** Zsh, Bash, Fish, sh, PowerShell 7 (`pwsh`)
 - WSL is offered only when at least one WSL distribution is installed.
 - Uses the selected folder/file path as the terminal start location; falls back to the first workspace folder.
-- Includes an **Open Terminal Here: Refresh Available Shells** command to re-scan after installing or removing a shell.
+- Includes a **Shell Yeah!: Refresh Available Shells** command to re-scan after installing or removing a shell.
 
 ## Commands
 
-Each supported shell contributes an "Open … Here" command — for example `Open PowerShell Here`, `Open Bash Here`, or `Open WSL Here`. These appear in the **Open Terminal Here** submenu in the Explorer context menu, and each one is shown only when its shell is detected.
+Each supported shell contributes an "Open … Here" command — for example `Open PowerShell Here`, `Open Bash Here`, or `Open WSL Here`. These appear in the **Shell Yeah!** submenu in the Explorer context menu, and each one is shown only when its shell is detected.
 
-- `Open Terminal Here: Refresh Available Shells` (`openTerminalHere.refresh`) — re-detect the installed shells.
+- `Shell Yeah!: Refresh Available Shells` (`openTerminalHere.refresh`) — re-detect the installed shells.
 
 ## Requirements
 
@@ -38,7 +38,7 @@ This extension currently does not contribute any user settings.
 
 ## Known Issues
 
-- Shells are detected when VS Code starts. After installing or removing a shell, run **Open Terminal Here: Refresh Available Shells** (or reload the window).
+- Shells are detected when VS Code starts. After installing or removing a shell, run **Shell Yeah!: Refresh Available Shells** (or reload the window).
 - WSL path translation depends on how `wsl.exe --cd` handles the provided path.
 
 ## Development

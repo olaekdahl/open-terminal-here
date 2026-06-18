@@ -1,10 +1,10 @@
 # Change Log
 
-All notable changes to the "open-terminal-here" extension will be documented in this file.
+All notable changes to the "Shell Yeah!" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [1.0.0] - 2026-06-18
 
 Initial release.
 
@@ -13,8 +13,8 @@ Initial release.
 - Cross-platform shell detection (Windows, macOS, Linux) — only installed shells are shown in the submenu.
 - Support for PowerShell 7 (`pwsh`), Git Bash, Zsh, Bash, Fish, and sh, in addition to PowerShell, Command Prompt, and WSL.
 - WSL is offered only when at least one distribution is installed.
-- An **Open Terminal Here: Refresh Available Shells** command to re-scan installed shells.
-- Grouped the terminal commands under an **Open Terminal Here** submenu in the Explorer context menu.
+- A **Shell Yeah!: Refresh Available Shells** command to re-scan installed shells.
+- Grouped the terminal commands under a **Shell Yeah!** submenu in the Explorer context menu.
 
 ### Changed
 

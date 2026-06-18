@@ -1,8 +1,8 @@
 {
-  "name": "open-terminal-here",
-  "displayName": "Open Terminal Here",
+  "name": "shell-yeah",
+  "displayName": "Shell Yeah!",
   "description": "Open a terminal (PowerShell, WSL, or Command Prompt) from the Explorer context menu, using the selected folder as the working directory.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "olaekdahl",
   "author": {
     "name": "Ola Ekdahl"
@@ -83,13 +83,13 @@
       {
         "command": "openTerminalHere.refresh",
         "title": "Refresh Available Shells",
-        "category": "Open Terminal Here"
+        "category": "Shell Yeah!"
       }
     ],
     "submenus": [
       {
         "id": "openTerminalHere.submenu",
-        "label": "Open Terminal Here"
+        "label": "Shell Yeah!"
       }
     ],
     "menus": {
