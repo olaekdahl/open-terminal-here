@@ -53,16 +53,40 @@
         "title": "Open PowerShell 7 Here"
       },
       {
+        "command": "openTerminalHere.pwshPreview",
+        "title": "Open PowerShell Preview Here"
+      },
+      {
         "command": "openTerminalHere.cmd",
         "title": "Open Command Prompt Here"
+      },
+      {
+        "command": "openTerminalHere.devcmd",
+        "title": "Open Developer Command Prompt Here"
       },
       {
         "command": "openTerminalHere.gitbash",
         "title": "Open Git Bash Here"
       },
       {
+        "command": "openTerminalHere.cygwin",
+        "title": "Open Cygwin Here"
+      },
+      {
+        "command": "openTerminalHere.msys2",
+        "title": "Open MSYS2 Here"
+      },
+      {
         "command": "openTerminalHere.wsl",
         "title": "Open WSL Here"
+      },
+      {
+        "command": "openTerminalHere.conda",
+        "title": "Open Anaconda Prompt Here"
+      },
+      {
+        "command": "openTerminalHere.nu",
+        "title": "Open Nushell Here"
       },
       {
         "command": "openTerminalHere.zsh",
@@ -110,16 +134,40 @@
           "when": "openTerminalHere.pwshAvailable"
         },
         {
+          "command": "openTerminalHere.pwshPreview",
+          "when": "openTerminalHere.pwshPreviewAvailable"
+        },
+        {
           "command": "openTerminalHere.cmd",
           "when": "openTerminalHere.cmdAvailable"
+        },
+        {
+          "command": "openTerminalHere.devcmd",
+          "when": "openTerminalHere.devcmdAvailable"
         },
         {
           "command": "openTerminalHere.gitbash",
           "when": "openTerminalHere.gitbashAvailable"
         },
         {
+          "command": "openTerminalHere.cygwin",
+          "when": "openTerminalHere.cygwinAvailable"
+        },
+        {
+          "command": "openTerminalHere.msys2",
+          "when": "openTerminalHere.msys2Available"
+        },
+        {
           "command": "openTerminalHere.wsl",
           "when": "openTerminalHere.wslAvailable"
+        },
+        {
+          "command": "openTerminalHere.conda",
+          "when": "openTerminalHere.condaAvailable"
+        },
+        {
+          "command": "openTerminalHere.nu",
+          "when": "openTerminalHere.nuAvailable"
         },
         {
           "command": "openTerminalHere.zsh",

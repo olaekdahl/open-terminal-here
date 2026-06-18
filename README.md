@@ -6,9 +6,10 @@ Open a terminal directly from the Explorer context menu in VS Code, using the fo
 
 - Adds a **Shell Yeah!** submenu to the Explorer context menu.
 - Detects the shells installed on the current machine and only shows those that are available:
-	- **Windows:** PowerShell, PowerShell 7 (`pwsh`), Command Prompt, Git Bash, WSL
-	- **macOS / Linux:** Zsh, Bash, Fish, sh, PowerShell 7 (`pwsh`)
-- WSL is offered only when at least one WSL distribution is installed.
+	- **Windows:** PowerShell, PowerShell 7 & Preview (`pwsh`), Command Prompt, Developer Command Prompt for VS, Git Bash, Cygwin, MSYS2, WSL, Anaconda Prompt, Nushell
+	- **macOS / Linux:** Zsh, Bash, Fish, sh, PowerShell 7 & Preview (`pwsh`), Nushell
+- Each shell opens with its own terminal icon and color.
+- WSL is offered only when at least one distribution is installed; if you have several, you'll be prompted to pick one.
 - Uses the selected folder/file path as the terminal start location; falls back to the first workspace folder.
 - Includes a **Shell Yeah!: Refresh Available Shells** command to re-scan after installing or removing a shell.
 

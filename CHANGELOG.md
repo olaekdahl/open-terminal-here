@@ -12,7 +12,9 @@ Initial release.
 
 - Cross-platform shell detection (Windows, macOS, Linux) — only installed shells are shown in the submenu.
 - Support for PowerShell 7 (`pwsh`), Git Bash, Zsh, Bash, Fish, and sh, in addition to PowerShell, Command Prompt, and WSL.
-- WSL is offered only when at least one distribution is installed.
+- Additional shells: PowerShell Preview, Developer Command Prompt for VS, Cygwin, MSYS2, Anaconda Prompt, and Nushell.
+- A distinct terminal icon and color per shell.
+- WSL is offered only when at least one distribution is installed; prompts to choose when several exist.
 - A **Shell Yeah!: Refresh Available Shells** command to re-scan installed shells.
 - Grouped the terminal commands under a **Shell Yeah!** submenu in the Explorer context menu.
 
