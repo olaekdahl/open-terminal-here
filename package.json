@@ -1,5 +1,6 @@
 {
   "name": "open-terminal-here",
+  "publisher": "local-dev",
   "displayName": "Open Terminal Here",
   "description": "Open a terminal (PowerShell, WSL, or Command Prompt) from the Explorer context menu, using the selected folder as the working directory.",
   "version": "0.0.1",
