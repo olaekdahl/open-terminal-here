@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Open Terminal Here">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2f3d"/>
+      <stop offset="1" stop-color="#161a23"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="124" height="124" rx="26" fill="url(#bg)"/>
+  <rect x="2.75" y="2.75" width="122.5" height="122.5" rx="25.25" fill="none" stroke="#3ddc84" stroke-opacity="0.25" stroke-width="1.5"/>
+  <polyline points="40,46 64,64 40,82" fill="none" stroke="#3ddc84" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="72" y="76" width="30" height="10" rx="5" fill="#3ddc84"/>
+</svg>
