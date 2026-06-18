@@ -1,15 +1,10 @@
 import * as assert from 'assert';
 import * as vscode from 'vscode';
 import { getCwd } from '../extension';
+import { shellDefs } from '../shells';
 
 suite('Extension Test Suite', () => {
-	const commandIds = [
-		'openTerminalHere.powershell',
-		'openTerminalHere.wsl',
-		'openTerminalHere.cmd'
-	];
-
-	test('registers all Open Terminal Here commands', async () => {
+	test('registers a command for every shell plus refresh', async () => {
 		const extension = vscode.extensions.all.find(
 			(e) => e.packageJSON?.name === 'open-terminal-here'
 		);
@@ -18,9 +13,16 @@ suite('Extension Test Suite', () => {
 		await extension.activate();
 
 		const commands = await vscode.commands.getCommands(true);
-		for (const id of commandIds) {
-			assert.ok(commands.includes(id), `Expected command '${id}' to be registered`);
+		for (const def of shellDefs) {
+			assert.ok(
+				commands.includes(def.commandId),
+				`Expected command '${def.commandId}' to be registered`
+			);
 		}
+		assert.ok(
+			commands.includes('openTerminalHere.refresh'),
+			'Expected the refresh command to be registered'
+		);
 	});
 
 	test('getCwd returns the fsPath of the provided uri', () => {

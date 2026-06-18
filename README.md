@@ -1,40 +1,36 @@
 # Open Terminal Here
 
-Open a terminal directly from the Explorer context menu in VS Code, using the folder you clicked as the working directory.
+Open a terminal directly from the Explorer context menu in VS Code, using the folder you clicked as the working directory. The extension detects the shells installed on your machine — across Windows, macOS, and Linux — and only offers the ones that are actually available.
 
 ## Features
 
-- Adds an **Open Terminal Here** submenu to the Explorer context menu, with actions to open:
-	- PowerShell
-	- WSL
-	- Command Prompt (CMD)
-- Uses the selected folder/file path as the terminal start location.
-- If no path is provided, falls back to the first workspace folder.
-- Only shown on Windows.
+- Adds an **Open Terminal Here** submenu to the Explorer context menu.
+- Detects the shells installed on the current machine and only shows those that are available:
+	- **Windows:** PowerShell, PowerShell 7 (`pwsh`), Command Prompt, Git Bash, WSL
+	- **macOS / Linux:** Zsh, Bash, Fish, sh, PowerShell 7 (`pwsh`)
+- WSL is offered only when at least one WSL distribution is installed.
+- Uses the selected folder/file path as the terminal start location; falls back to the first workspace folder.
+- Includes an **Open Terminal Here: Refresh Available Shells** command to re-scan after installing or removing a shell.
 
 ## Commands
 
-This extension contributes the following commands:
+Each supported shell contributes an "Open … Here" command — for example `Open PowerShell Here`, `Open Bash Here`, or `Open WSL Here`. These appear in the **Open Terminal Here** submenu in the Explorer context menu, and each one is shown only when its shell is detected.
 
-- `Open PowerShell Here` (`openTerminalHere.powershell`)
-- `Open WSL Here` (`openTerminalHere.wsl`)
-- `Open Command Prompt Here` (`openTerminalHere.cmd`)
-
-These commands are available from the **Open Terminal Here** submenu in the Explorer context menu.
+- `Open Terminal Here: Refresh Available Shells` (`openTerminalHere.refresh`) — re-detect the installed shells.
 
 ## Requirements
 
-- Windows OS
 - Visual Studio Code 1.120.0 or newer
-- For `Open WSL Here`: WSL must be installed and available (`wsl.exe`)
+- At least one supported shell installed (most systems include one by default)
+- For `Open WSL Here` (Windows): WSL with at least one installed distribution (`wsl.exe`)
 
 ## How It Works
 
-- Shell executables are resolved from `%SystemRoot%` (falling back to `C:\Windows`), so a non-default Windows install location is handled correctly.
-- PowerShell starts with `powershell.exe` and sets `cwd` to the selected path.
-- CMD starts with `cmd.exe` and sets `cwd` to the selected path.
-- WSL starts with `wsl.exe` and passes `--cd <path>` when a path is available.
-- If a shell executable cannot be found, an error message is shown instead of opening a broken terminal.
+- On startup the extension scans for installed shells using known install locations, your `PATH`, and `/etc/shells` (macOS/Linux), then shows only the shells it finds.
+- Windows shell executables are resolved from `%SystemRoot%` (falling back to `C:\Windows`), so a non-default Windows install location is handled correctly.
+- WSL availability is confirmed by checking for an installed distribution (`wsl --list --quiet`).
+- Each shell launches from a resolved absolute path with the selected folder as the working directory; WSL receives `--cd <path>`.
+- If a shell can no longer be found when invoked, an error message is shown instead of opening a broken terminal.
 
 ## Extension Settings
 
@@ -42,6 +38,7 @@ This extension currently does not contribute any user settings.
 
 ## Known Issues
 
+- Shells are detected when VS Code starts. After installing or removing a shell, run **Open Terminal Here: Refresh Available Shells** (or reload the window).
 - WSL path translation depends on how `wsl.exe --cd` handles the provided path.
 
 ## Development

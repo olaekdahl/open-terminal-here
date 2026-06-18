@@ -9,7 +9,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -18,12 +20,41 @@
         "title": "Open PowerShell Here"
       },
       {
-        "command": "openTerminalHere.wsl",
-        "title": "Open WSL Here"
+        "command": "openTerminalHere.pwsh",
+        "title": "Open PowerShell 7 Here"
       },
       {
         "command": "openTerminalHere.cmd",
         "title": "Open Command Prompt Here"
+      },
+      {
+        "command": "openTerminalHere.gitbash",
+        "title": "Open Git Bash Here"
+      },
+      {
+        "command": "openTerminalHere.wsl",
+        "title": "Open WSL Here"
+      },
+      {
+        "command": "openTerminalHere.zsh",
+        "title": "Open Zsh Here"
+      },
+      {
+        "command": "openTerminalHere.bash",
+        "title": "Open Bash Here"
+      },
+      {
+        "command": "openTerminalHere.fish",
+        "title": "Open Fish Here"
+      },
+      {
+        "command": "openTerminalHere.sh",
+        "title": "Open sh Here"
+      },
+      {
+        "command": "openTerminalHere.refresh",
+        "title": "Refresh Available Shells",
+        "category": "Open Terminal Here"
       }
     ],
     "submenus": [
@@ -37,18 +68,45 @@
         {
           "submenu": "openTerminalHere.submenu",
           "group": "navigation",
-          "when": "isWindows"
+          "when": "openTerminalHere.hasShells"
         }
       ],
       "openTerminalHere.submenu": [
         {
-          "command": "openTerminalHere.powershell"
+          "command": "openTerminalHere.powershell",
+          "when": "openTerminalHere.powershellAvailable"
         },
         {
-          "command": "openTerminalHere.wsl"
+          "command": "openTerminalHere.pwsh",
+          "when": "openTerminalHere.pwshAvailable"
         },
         {
-          "command": "openTerminalHere.cmd"
+          "command": "openTerminalHere.cmd",
+          "when": "openTerminalHere.cmdAvailable"
+        },
+        {
+          "command": "openTerminalHere.gitbash",
+          "when": "openTerminalHere.gitbashAvailable"
+        },
+        {
+          "command": "openTerminalHere.wsl",
+          "when": "openTerminalHere.wslAvailable"
+        },
+        {
+          "command": "openTerminalHere.zsh",
+          "when": "openTerminalHere.zshAvailable"
+        },
+        {
+          "command": "openTerminalHere.bash",
+          "when": "openTerminalHere.bashAvailable"
+        },
+        {
+          "command": "openTerminalHere.fish",
+          "when": "openTerminalHere.fishAvailable"
+        },
+        {
+          "command": "openTerminalHere.sh",
+          "when": "openTerminalHere.shAvailable"
         }
       ]
     }
