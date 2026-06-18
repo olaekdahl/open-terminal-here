@@ -1,7 +1,7 @@
 {
   "name": "open-terminal-here",
-  "displayName": "open-terminal-here",
-  "description": "Context meny terminal type picker",
+  "displayName": "Open Terminal Here",
+  "description": "Open a terminal (PowerShell, WSL, or Command Prompt) from the Explorer context menu, using the selected folder as the working directory.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.120.0"
@@ -12,37 +12,47 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-  "commands": [
-    {
-      "command": "openTerminalHere.powershell",
-      "title": "Open PowerShell Here"
-    },
-    {
-      "command": "openTerminalHere.wsl",
-      "title": "Open WSL Here"
-    },
-    {
-      "command": "openTerminalHere.cmd",
-      "title": "Open Command Prompt Here"
-    }
-  ],
-  "menus": {
-    "explorer/context": [
+    "commands": [
       {
         "command": "openTerminalHere.powershell",
-        "group": "navigation"
+        "title": "Open PowerShell Here"
       },
       {
         "command": "openTerminalHere.wsl",
-        "group": "navigation"
+        "title": "Open WSL Here"
       },
       {
         "command": "openTerminalHere.cmd",
-        "group": "navigation"
+        "title": "Open Command Prompt Here"
       }
-    ]
-  }
-},
+    ],
+    "submenus": [
+      {
+        "id": "openTerminalHere.submenu",
+        "label": "Open Terminal Here"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "openTerminalHere.submenu",
+          "group": "navigation",
+          "when": "isWindows"
+        }
+      ],
+      "openTerminalHere.submenu": [
+        {
+          "command": "openTerminalHere.powershell"
+        },
+        {
+          "command": "openTerminalHere.wsl"
+        },
+        {
+          "command": "openTerminalHere.cmd"
+        }
+      ]
+    }
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

@@ -4,12 +4,13 @@ Open a terminal directly from the Explorer context menu in VS Code, using the fo
 
 ## Features
 
-- Adds right-click Explorer actions to open:
+- Adds an **Open Terminal Here** submenu to the Explorer context menu, with actions to open:
 	- PowerShell
 	- WSL
 	- Command Prompt (CMD)
 - Uses the selected folder/file path as the terminal start location.
 - If no path is provided, falls back to the first workspace folder.
+- Only shown on Windows.
 
 ## Commands
 
@@ -19,7 +20,7 @@ This extension contributes the following commands:
 - `Open WSL Here` (`openTerminalHere.wsl`)
 - `Open Command Prompt Here` (`openTerminalHere.cmd`)
 
-These commands are available from the Explorer context menu.
+These commands are available from the **Open Terminal Here** submenu in the Explorer context menu.
 
 ## Requirements
 
@@ -29,9 +30,11 @@ These commands are available from the Explorer context menu.
 
 ## How It Works
 
+- Shell executables are resolved from `%SystemRoot%` (falling back to `C:\Windows`), so a non-default Windows install location is handled correctly.
 - PowerShell starts with `powershell.exe` and sets `cwd` to the selected path.
 - CMD starts with `cmd.exe` and sets `cwd` to the selected path.
 - WSL starts with `wsl.exe` and passes `--cd <path>` when a path is available.
+- If a shell executable cannot be found, an error message is shown instead of opening a broken terminal.
 
 ## Extension Settings
 
@@ -39,7 +42,6 @@ This extension currently does not contribute any user settings.
 
 ## Known Issues
 
-- The extension currently uses fixed Windows shell paths. If those executables are missing or relocated, the terminal may fail to start.
 - WSL path translation depends on how `wsl.exe --cd` handles the provided path.
 
 ## Development
